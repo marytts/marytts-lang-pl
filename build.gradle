@@ -12,6 +12,24 @@ repositories {
     }
 }
 
+sourceSets {
+    integrationTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+        }
+    }
+}
+
+configurations {
+    integrationTestCompile {
+        extendsFrom testCompile
+    }
+    integrationTestRuntime {
+        extendsFrom testRuntime
+    }
+}
+
 dependencies {
     compile group: 'de.dfki.mary', name: 'marytts-runtime', version: '5.2'
     runtime group: 'de.dfki.mary', name: 'marytts-lexicon-pl', version: '0.1.0-SNAPSHOT'
@@ -21,5 +39,14 @@ dependencies {
 }
 
 test {
+    useTestNG()
+}
+
+task integrationTest(type: Test) {
+    group 'Verification'
+    description 'Runs the integration tests.'
+    check.dependsOn it
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
     useTestNG()
 }
