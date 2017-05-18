@@ -1,2 +1,18 @@
+plugins {
+    id 'java'
+}
+
 group 'de.dfki.mary'
 version '0.1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+    maven {
+        url 'https://oss.jfrog.org/artifactory/oss-snapshot-local/'
+    }
+}
+
+dependencies {
+    compile group: 'de.dfki.mary', name: 'marytts-runtime', version: '5.2'
+    runtime group: 'de.dfki.mary', name: 'marytts-lexicon-pl', version: '0.1.0-SNAPSHOT'
+}
