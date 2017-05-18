@@ -15,4 +15,9 @@ repositories {
 dependencies {
     compile group: 'de.dfki.mary', name: 'marytts-runtime', version: '5.2'
     runtime group: 'de.dfki.mary', name: 'marytts-lexicon-pl', version: '0.1.0-SNAPSHOT'
+    testCompile group: 'org.testng', name: 'testng', version: '6.9.11'
+}
+
+test {
+    useTestNG()
 }
