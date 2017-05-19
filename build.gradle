@@ -50,6 +50,7 @@ task integrationTest(type: Test) {
     testClassesDir = sourceSets.integrationTest.output.classesDir
     classpath = sourceSets.integrationTest.runtimeClasspath
     useTestNG()
+    workingDir buildDir
 }
 
 task sourceJar(type: Jar) {
