@@ -1,1 +1,2 @@
-najwspanialszym	n a j - f s p a - n` a l - S I m	content	lexicon
+najwspanialszym	' n a j f s - p a - n` a l - S I m	content	rules
+parlamentarzystów	p a r - l a - m e n - t a - Z I s - t u v	content	lexicon
