@@ -6,6 +6,8 @@ plugins {
 group 'de.dfki.mary'
 version '0.1.0-SNAPSHOT'
 
+sourceCompatibility = '1.7'
+
 repositories {
     jcenter()
     maven {
